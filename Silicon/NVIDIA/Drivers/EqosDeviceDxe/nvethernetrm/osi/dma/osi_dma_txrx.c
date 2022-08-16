@@ -33,45 +33,6 @@
 static struct desc_ops d_ops[MAX_MAC_IP_TYPES];
 
 /**
- * @brief get_rx_err_stats - Detect Errors from Rx Descriptor
- *
- * @note
- * Algorithm:
- *  - This routine will be invoked by OSI layer itself which
- *    checks for the Last Descriptor and updates the receive status errors
- *    accordingly.
- *
- * @note
- * API Group:
- * - Initialization: No
- * - Run time: Yes
- * - De-initialization: No
- *
- * @param[in] rx_desc: Rx Descriptor.
- * @param[in, out] pkt_err_stats: Packet error stats which stores the errors
- *  reported
- */
-static inline void get_rx_err_stats(struct osi_rx_desc *rx_desc,
-				    struct osi_pkt_err_stats *pkt_err_stats)
-{
-	/* increment rx crc if we see CE bit set */
-	if ((rx_desc->rdes3 & RDES3_ERR_CRC) == RDES3_ERR_CRC) {
-		pkt_err_stats->rx_crc_error =
-			osi_update_stats_counter(
-					pkt_err_stats->rx_crc_error,
-					1UL);
-	}
-
-	/* increment rx frame error if we see RE bit set */
-	if ((rx_desc->rdes3 & RDES3_ERR_RE) == RDES3_ERR_RE) {
-		pkt_err_stats->rx_frame_error =
-			osi_update_stats_counter(
-					pkt_err_stats->rx_frame_error,
-					1UL);
-	}
-}
-
-/**
  * @brief validate_rx_completions_arg- Validate input argument of rx_completions
  *
  * @note
