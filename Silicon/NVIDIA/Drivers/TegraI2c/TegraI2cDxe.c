@@ -1026,6 +1026,8 @@ TegraI2CDriverBindingStart (
   EFI_DEVICE_PATH_PROTOCOL       *DevicePathNode;
   UINT32                         Count;
 
+  I2cBusHandle = 0;
+
   Status = gBS->HandleProtocol (
                   ControllerHandle,
                   &gNVIDIANonDiscoverableDeviceProtocolGuid,
