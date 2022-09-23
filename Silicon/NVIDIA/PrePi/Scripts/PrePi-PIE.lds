@@ -18,8 +18,9 @@ SECTIONS
     *(.rodata .rodata*)
     *(.data .data*)
     *(.bss .bss*)
+  }
 
-    . = ALIGN(0x20);
+  .rodata : ALIGN(0x20) {
     PROVIDE(__reloc_start = .);
     *(.rel .rel.*)
     *(.rela .rela.*)
