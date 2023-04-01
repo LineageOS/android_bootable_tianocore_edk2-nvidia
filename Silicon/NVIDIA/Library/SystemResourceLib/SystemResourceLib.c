@@ -150,7 +150,7 @@ InstallMmioRegions (
 
   *MmioRegionsCount += InstallMmioRegion (
                          (TegraGetBLInfoLocationAddress (ChipID) & ~EFI_PAGE_MASK),
-                         SIZE_4KB
+                         SIZE_16KB
                          );
   *MmioRegionsCount += InstallMmioRegion (
                          TegraGetGicDistributorBaseAddress (ChipID),
