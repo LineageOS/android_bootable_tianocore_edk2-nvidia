@@ -259,15 +259,6 @@
   #
   INF Silicon/NVIDIA/Drivers/PlatformToDriverConfiguration/PlatformToDriverConfiguration.inf
 
-  #
-  # Logo Files
-  #
-  FILE FREEFORM = gNVIDIAPlatformLogoGuid {
-    SECTION RAW = Silicon/NVIDIA/Assets/nvidiagray480.bmp
-    SECTION RAW = Silicon/NVIDIA/Assets/nvidiagray720.bmp
-    SECTION RAW = Silicon/NVIDIA/Assets/nvidiagray1080.bmp
-  }
-
 
   #
   # Capsule Update Policy Protocol
