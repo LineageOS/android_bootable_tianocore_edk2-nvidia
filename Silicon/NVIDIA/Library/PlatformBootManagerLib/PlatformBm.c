@@ -875,6 +875,10 @@ DisplaySystemAndHotkeyInformation (
   UINTN                          StartLineY = EFI_GLYPH_HEIGHT+1;
   UINTN                          LineDeltaY = EFI_GLYPH_HEIGHT+1;
 
+  if (FixedPcdGetBool (PcdTegraDisableScreenPrints)) {
+    return;
+  }
+
   //
   // Display hotkey information at upper left corner.
   //
@@ -1566,6 +1570,10 @@ PlatformBootManagerWaitCallback (
   UINT16                               Timeout;
   EFI_STATUS                           Status;
   EFI_STRING                           ProgressTitle;
+
+  if (FixedPcdGetBool (PcdTegraDisableScreenPrints)) {
+    return;
+  }
 
   ProgressTitle = NULL;
   Timeout       = PcdGet16 (PcdPlatformBootTimeOut);

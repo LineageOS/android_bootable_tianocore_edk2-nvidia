@@ -340,6 +340,9 @@
 #Size of Buffer used to communicate with fTPM TA in OP-TEE
   gNVIDIATokenSpaceGuid.PcdFtpmShmSize|0|UINT64|0x000010D
 
+#Disable screen prints
+  gNVIDIATokenSpaceGuid.PcdTegraDisableScreenPrints|FALSE|BOOLEAN|0x00009990
+
 [PcdsFeatureFlag]
 #OPTEE presence
   gNVIDIATokenSpaceGuid.PcdOpteePresent|FALSE|BOOLEAN|0x00000067

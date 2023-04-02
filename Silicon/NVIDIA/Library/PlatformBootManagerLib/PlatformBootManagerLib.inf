@@ -73,6 +73,7 @@
   gEfiMdePkgTokenSpaceGuid.PcdUartDefaultStopBits
   gEfiMdePkgTokenSpaceGuid.PcdDefaultTerminalType
   gNVIDIATokenSpaceGuid.PcdTegraPrintInternalBanner
+  gNVIDIATokenSpaceGuid.PcdTegraDisableScreenPrints
 
 [Pcd]
   gEfiMdePkgTokenSpaceGuid.PcdPlatformBootTimeOut
