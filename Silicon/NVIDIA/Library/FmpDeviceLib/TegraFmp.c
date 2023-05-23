@@ -91,6 +91,7 @@ STATIC CONST CHAR16  *SpecialImageNames[] = {
 
 // optional images are only updated if present in capsule
 STATIC CONST CHAR16  *OptionalImageNames[] = {
+  L"eks",
   L"sce-fw",
   L"smm-fw",
   L"tsec-fw",
