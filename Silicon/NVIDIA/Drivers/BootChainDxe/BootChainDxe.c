@@ -235,7 +235,7 @@ BootChainCheckAndCancelUpdate (
 
   Status = BCGetVariable (BC_NEXT, &BCNext);
   if (Status != EFI_NOT_FOUND) {
-    *Canceled = TRUE;
+    // Dont fail bl update if slot switch is requested
     BCDeleteVariable (BC_NEXT);
   }
 
